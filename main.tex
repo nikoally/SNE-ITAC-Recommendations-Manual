@@ -1,0 +1,113 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+\usepackage{hyperref}
+\usepackage{biblatex}
+\usepackage[margin=1in]{geometry}
+\usepackage{ifthen} % For conditional statements
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{soul}
+
+
+
+\usepackage[parfill]{parskip}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{11pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,      
+    urlcolor=blue,
+    citecolor=blue,
+    pdfpagemode=FullScreen,
+}
+
+\bibliography{bibliography}
+
+
+\usepackage{subfiles}
+\usepackage{titling}
+\setlength{\droptitle}{20pt}
+
+
+
+% Define a switch to control the status
+\newboolean{showstatus}
+\setboolean{showstatus}{true} % Set to true or false
+
+% Define the \allset{} command
+\newcommand{\allset}{
+    \ifthenelse{\boolean{showstatus}}{\colorbox{green}{all set}}{}
+}
+
+\newcommand{\inprogress}{
+    \ifthenelse{\boolean{showstatus}}{\colorbox{yellow}{in progress}}{}
+}
+
+% Define a switch to control the highlighting
+\newboolean{showhighlight}
+\setboolean{showhighlight}{true} % Set to true to show highlights, false to hide them
+
+% Redefine \hl to respect the showhighlight toggle
+
+\renewcommand{\hl}[1]{%
+    \ifthenelse{\boolean{showhighlight}}{\colorbox{ProcessBlue}{#1}}{}%
+}
+
+
+\title{SNE-ITAC Recommendation Manual}
+\author{Nicholas Bailey}
+\date{\today}
+
+\setcounter{secnumdepth}{0} % Remove Section Numbering
+
+\begin{document}
+
+\maketitle
+
+\clearpage
+
+\tableofcontents 
+
+\clearpage
+
+
+\section{Apply for Tax-free Status for Energy Purchases}
+[ARC 2.6121 - Apply for tax-free status for energy purchases]
+
+\inprogress
+
+\subsection{Overview}
+
+In most jurisdictions, sales tax need not be paid on energy purchases for manufacturers. However, laws vary greatly by jurisdiction, so it's important to consider where the manufacturer is located when making this recommendation. 
+
+\subsection{Required Information}
+
+\begin{itemize}
+    \item Utility bills for all accounts
+    \item Address of manufacturer 
+\end{itemize}
+
+\subsection{Calculation Methodology}
+
+In general, the savings can be calculated by summing the sales tax paid on energy purchases in the past 12 months. This should be done for all energy bills with sales tax on them, provided they should be exempt. See below for a summary of criteria by jurisdiction. 
+
+\paragraph{Connecticut}
+
+Energy purchases are tax exempt provided that at least 75\% of the energy is used for ``production, fabrication, or manufacturing" \cite{ConnGenStat12-412}. In order to claim this, the manufacturer must submit form CERT-115. \hl{add GETC}
+
+
+\paragraph{Massachusets}
+
+Energy purchases are tax exempt provided that at least 75\% of the energy is used for "manufacturing or heating the plant" \cite{EversourceEnergyTaxExemption}. In order to claim this, the manufacturer must fill out Massachusets Form ST-12. 
+
+\paragraph{New York}
+
+\paragraph{Rhode Island}
+
+\paragraph{Maine}
+
+
+\end{document}
